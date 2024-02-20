@@ -1,0 +1,94 @@
+{
+    "openapi":"3.0.2",
+    "info": {
+      "title":"Catgeory Restful API",
+      "description":"API Spec for Category Restful API",
+      "version":"1.0"
+    },
+    "servers": [
+        {
+            "url":"http://localhost:3000/api"
+        }
+    ],
+    "paths": {
+        "/categories" : {
+            "get" : {
+                "tags": ["Category API"],
+                "description": "List all Categories",
+                "responses": {
+                    "200": {
+                        "description": "Success get All Categories",
+                        "content": {
+                            "application/json" : {
+                                "schema":{
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status":{
+                                            "type": "string"
+                                        },
+                                        "data":{
+                                            "type": "array",
+                                            "items":{
+                                                "type": "object",
+                                                "properties": {
+                                                    "id":{
+                                                        "type": "number"
+                                                    },
+                                                    "name":{
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "description": "Create New category",
+                "tags": ["Category API"],
+                "requestBody":{
+                    "content": {
+                        "application/json" : {
+                            "schema" : {
+                                "type": "object",
+                                "properties": {
+                                    "name":{
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200" : {
+                        "description": "Success Create Category",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "properties": {
+                                        "id":{
+                                            "type": "number"
+                                        },
+                                        "name":{
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+  }
