@@ -28,7 +28,7 @@ func validationErrors(writer http.ResponseWriter, request *http.Request, err int
 
 		webResponse := web.WebResponse{
 			Code:   http.StatusBadRequest,
-			Status: "Bad Request",
+			Status: "BAD REQUEST",
 			Data:   exception.Error(),
 		}
 
@@ -48,7 +48,7 @@ func notFoundError(writer http.ResponseWriter, request *http.Request, err interf
 
 		webResponse := web.WebResponse{
 			Code:   http.StatusNotFound,
-			Status: "Not Found",
+			Status: "NOT FOUND",
 			Data:   exception.Error,
 		}
 
